@@ -1,0 +1,33 @@
+body
+{
+    color: azure;
+    font-size: 40px;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: bold;
+    background-image: url("../img/diamondmember1.png");
+    background-size: cover;
+}
+
+.enterpin
+{
+    padding: 25% 0;
+    text-align: center;
+}
+
+
+button
+{
+    border-radius: 15% 20% 15% 20%;
+    border-style: none;
+    border-color: #040d50;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #343f93;
+    color: white;
+}
+
+button:hover
+{
+    box-shadow: 3px 3px #cadfe2, -3px  -3px #cadfe2;
+}

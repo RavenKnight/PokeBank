@@ -1,0 +1,112 @@
+header span{
+    padding-left: 10%;
+    font-size: 30px;
+    color: azure;
+}
+
+hr{
+    color: azure;
+}
+
+header .welcome{
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2%;
+    color: azure;
+}
+
+body{
+    font-family: 'Exo 2', sans-serif;
+    background-image: url("../img/diamondmember1.png");
+    background-size: cover;
+    
+}
+
+h4{
+    font-weight: bold;
+}
+
+input{
+    height: 35px;
+}
+
+button{
+    color: azure;
+    border-radius: 7px;
+    background-color: #3A3E94;
+    font-weight: 500;
+    border: none;
+    padding: 3px 3px 3px 3px;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    width: 125px;
+    height: 35px;
+    margin-left: 35px;
+ }
+
+ #inout{
+    height: 290px;
+    width: 410px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    text-align: justify;
+    background-image: url("../img/umbreon.png") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left: 2%;
+    color: azure;
+ }
+
+ #transfer{
+    height: 290px;
+    width: 410px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    padding-top: 5%;
+    padding-right: 2%;
+    padding-left: 2%;
+    color: azure;
+    text-align: justify;
+    background-image: url("../img/glaceon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+
+#services{
+    height: 290px;
+    width: 410px;
+    border-radius: 10px;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left: 2%;
+    color: azure;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    text-align: justify;
+    background-image: url("../img/jolteon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#consult{
+    height: 290px;
+    width: 410px;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: azure;
+    margin-left: 40px;
+    border-radius: 10px;
+    text-align: justify;
+    background-image: url("../img/espeon.png") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+ }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Pokémon Bank - Cajero</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <!--Fuente de Google-->
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Hoja de estilos-->
+        <link rel="stylesheet" type="text/css" href="css/interface.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="welcome">Bienvenido a su cajero Pokémon Bank</h1>
+            <span id="name"></span>
+            <br>
+            <span id="acct"></span>
+            <hr>
+        </header>
+        <br>
+        <br>
+        <!--Contenedor para las tarjetas con acciones-->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-6" id="inout">
+                    <!--Formulario para retiro y depósito de efectivo-->
+                    <form>
+                        <h4>Ingrese la cantidad a depositar</h4>
+                        <label for="Depósito"></label>
+                        <input type="number" placeholder="Monto a depositar"> 
+                        <button>Depositar</button>
+                        <br><br>
+                        <h4>Ingrese la cantidad a retirar</h4>
+                        <label for="Retiro"></label>
+                        <input type="number" placeholder="Monto a retirar"> 
+                        <button>Retirar</button>
+                    </form>
+                </div>
+                <!--Transferencia de fondos-->
+                <div class="col-sm-12 col-6" id="transfer">
+                    <h4>Para efectuar transferencias, haga click en Transferir</h4>
+                    <br>
+                    <button id="move">Transferir</button>
+                </div>
+                
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <!--Pago de servicios con botones-->
+                    <div class="col-sm-12 col-6" id="services">
+                        <h4>Para pago de servicios elija la opción correspondiente.</h4>
+                        <br>
+                        <button>Energía</button>
+                        <button>Agua</button>
+                        <br><br>
+                        <button>Teléfono</button>
+                        <button>Cable/Internet</button>                    
+                    </div>
+                    <!--Dirigirá al historial de transacciones-->
+                    <div class="col-sm-12 col-6" id="consult">
+                        <h4>Para consultar el historial de transacciones, haga click en Transacciones.</h4>
+                        <br>
+                        <button>Transacciones</button>
+                    </div>
+                </div>
+        </div>
+    </body>
+
+    <section>
+        <!--Scripts utilizados-->
+        <script src="./js/prueba.js"></script>
+        <script src="./js/access.js"></script>
+    </section>
+</html>

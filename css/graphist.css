@@ -1,0 +1,28 @@
+header span{
+    padding-left: 10%;
+    font-size: 30px;
+    color: azure;
+}
+
+hr{
+    color: azure;
+}
+
+header .welcome{
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2%;
+    color: azure;
+}
+
+body{
+    font-family: 'Exo 2', sans-serif;
+    background-image: url("../img/diamondmember1.png");
+    background-size: cover;   
+}
+
+.container{
+    background-color: azure;
+    opacity: 0.7;   
+}
