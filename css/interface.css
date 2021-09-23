@@ -46,6 +46,15 @@ button{
     margin-left: 35px;
  }
 
+ #logout{
+     background-color: crimson;
+     color: azure;
+     float: right;
+     margin-right: 225px;
+     display: block;
+     font-size: 18px;
+ }
+
  #inout{
     height: 290px;
     width: 410px;

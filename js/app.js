@@ -9,3 +9,8 @@ function show(){
     document.getElementById("name").innerHTML="Nombre: "+username;
     document.getElementById("acct").innerHTML="Número de cuenta: "+account;
 }
+
+function logout(){
+  let cerrar = document.getElementById("logout").value
+  location.href= "pokelogin.html"
+}
