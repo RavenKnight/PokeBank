@@ -30,21 +30,17 @@
                     <!--Formulario para retiro y depósito de efectivo-->
                     <form>
                         <h4>Ingrese la cantidad a depositar</h4>
-                        <label for="Depósito"></label>
-                        <input type="number" placeholder="Monto a depositar"> 
-                        <button>Depositar</button>
+                        <button type="button" onclick="enter()">Depositar</button>
                         <br><br>
-                        <h4>Ingrese la cantidad a retirar</h4>
-                        <label for="Retiro"></label>
-                        <input type="number" placeholder="Monto a retirar"> 
-                        <button>Retirar</button>
+                        <h4>Ingrese la cantidad a retirar</h4> 
+                        <button type="button" onclick="withdraw()">Retirar</button>
                     </form>
                 </div>
                 <!--Transferencia de fondos-->
                 <div class="col-sm-12 col-6" id="transfer">
                     <h4>Para efectuar transferencias, haga click en Transferir</h4>
                     <br>
-                    <button id="move">Transferir</button>
+                    <button type="button" onclick="movefund()">Transferir</button>
                 </div>
                 
                 </div>
@@ -55,17 +51,20 @@
                     <div class="col-sm-12 col-6" id="services">
                         <h4>Para pago de servicios elija la opción correspondiente.</h4>
                         <br>
-                        <button>Energía</button>
-                        <button>Agua</button>
+                        <button type="button" onclick="paybill()">Energía</button>
+                        <button type="button" onclick="paybill()">Agua</button>
                         <br><br>
-                        <button>Teléfono</button>
-                        <button>Cable/Internet</button>                    
+                        <button type="button" onclick="paybill()">Teléfono</button>
+                        <button type="button" onclick="paybill()">Cable/Internet</button>                    
                     </div>
                     <!--Dirigirá al historial de transacciones-->
                     <div class="col-sm-12 col-6" id="consult">
-                        <h4>Para consultar el historial de transacciones, haga click en Transacciones.</h4>
+                        <h4>Para sus consultas, seleccione una de las siguientes opciones</h4>
                         <br>
-                        <button>Transacciones</button>
+                        <button type="button" id="transact" onclick="historial()">Transacciones</button>
+                        <br>
+                        <br>
+                        <button type="button" id="mostrarbal" onclick="showbalance()">Ver balance</button>
                     </div>
                 </div>
         </div>
@@ -73,7 +72,11 @@
 
     <section>
         <!--Scripts utilizados-->
+        <script src="./js/validate.js"></script>
         <script src="./js/app.js"></script>
         <script src="./js/access.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </section>
 </html>
