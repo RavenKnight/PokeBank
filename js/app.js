@@ -38,34 +38,37 @@ var constraints = {
 document.getElementById("name").innerHTML="Nombre: " + uinfo.Nombre;
 document.getElementById("acct").innerHTML= "Nº de cuenta: " + uinfo.Cuenta;
 
-//Balance inicial de cuenta
+//Balance inicial de cuenta y tipos de transacciones.
 let dinero = {balance: 500,}; 
+let histname;
+let monto;
 
 //Para guardar y actualizar historial.
-if (
-  localStorage.getItem("histname") === null &&
-  localStorage.getItem("histvalue") === null
-) {
-  let history = ["inicial"];
-  let histvalue = [dinero.balance];
+  if (
+    localStorage.getItem("HistorialNombre") === null &&
+    localStorage.getItem("HistorialValor") === null
+  ) {
+    let historial = ["inicial"];
+    let historialValor = [dinero.balance];
+    
+    localStorage.setItem("HistorialNombre", JSON.stringify(historial));
+    localStorage.setItem("HistorialValor", JSON.stringify(historialValor));
+  } else {
   
-  localStorage.setItem("histname", JSON.stringify(history));
-  localStorage.setItem("histvalue", JSON.stringify(histvalue));
-} else {
+    let balance = JSON.parse(localStorage.getItem("HistorialValor"));
+    dinero.balance = balance[balance.length - 1];
+  
+  }
 
-  let balance = JSON.parse(localStorage.getItem("histvalue"));
-  dinero.balance = balance[balance.length - 1];
 
-}
-function refresh(name, amount) {
+function ActualizarHistorial(nombre, valor) {
+  let historial = JSON.parse(localStorage.getItem("HistorialNombre"));
+  let historialValor = JSON.parse(localStorage.getItem("HistorialValor"));
+  historial.push(nombre);
+  historialValor.push(valor);
 
-  let history = JSON.parse(localStorage.getItem("histname"));
-  let histvalue = JSON.parse(localStorage.getItem("histvalue"));
-  history.push(name);
-  histvalue.push(amount);
-
-  localStorage.setItem("histname", JSON.stringify(history));
-  localStorage.setItem("histvalue", JSON.stringify(histvalue));
+  localStorage.setItem("HistorialNombre", JSON.stringify(historial));
+  localStorage.setItem("HistorialValor", JSON.stringify(historialValor));
 }
 
 //Para cerrar sesión...
@@ -104,7 +107,7 @@ function enter(){
               icon: "success",
               text: "Su depósito ha sido efectuado exitosamente. Nuevo balance: US$" + dinero.balance,
             });
-            refresh("depósito", dinero.balance);
+            ActualizarHistorial("depósito", dinero.balance);
             break;
         }
       }else{
@@ -133,7 +136,7 @@ function withdraw(){
             icon: "success",
             text: "Retire su efectivo. Nuevo saldo: US$"+ dinero.balance,
           })
-          refresh("retiro", dinero.balance);
+          ActualizarHistorial("retiro", dinero.balance);
         break;
         case(moneyout >= 600):
           swal({
@@ -187,7 +190,7 @@ function movefund(){
             icon: "success",
             text: "Su transferencia fue exitosa. Nuevo saldo: US$"+ dinero.balance,
           });
-          refresh("transferencia", dinero.balance);
+          ActualizarHistorial("transferencia", dinero.balance);
         };
       })
     }else{
@@ -222,7 +225,7 @@ function paybill(){
             icon: "success",
             text: "Su pago se ha efectuado exitosamente. Nuevo saldo: US$" + dinero.balance,
           });
-          refresh("Pago de servicios", dinero.balance);
+          ActualizarHistorial("Pago de servicios", dinero.balance);
             break;
       }
     }else{

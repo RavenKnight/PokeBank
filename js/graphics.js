@@ -1,29 +1,33 @@
-const ctx = document.getElementById('myChart').getContext('2d');
-let labels = JSON.parse(localStorage.getItem("histname")); //Eje horizontal
-let data = JSON.parse(localStorage.getItem("histvalue")); //Eje vertical
+var canvas = document.getElementById("myChart");
+var ctx = canvas.getContext('2d');
+let labels = JSON.parse(localStorage.getItem("HistorialNombre")); // datos horizantales
+let data = JSON.parse(localStorage.getItem("HistorialValor")); // datos verticales
+let button = document.getElementById("printhistory");
 
-const myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: labels,
-        datasets: [{
-            label: 'Flujo de efectivo',
-            
-            data: data,
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.2)',
-            ],
-            borderColor: [
-                'rgba(153, 102, 255, 1)',  
-            ],
-            borderWidth: 4
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        responsive: true
-    }
-});
+
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+         
+                label: 'Historial de transaciones',
+             
+                data: data,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true
+        }
+    });
 
 
     function downloadPDF() {
@@ -32,10 +36,7 @@ const myChart = new Chart(ctx, {
           //creates PDF from img
           doc.addImage(canvasImg, 'JPEG', 10, 10, 195, 120 );
           doc.save('Graficas.pdf');
-  
     }
-    button.addEventListener('click',downloadPDF);
+    
 
-    function regresar(){
-        location.href= "pokeint.html"
-      }
+      
